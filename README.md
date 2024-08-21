@@ -1,5 +1,5 @@
 # ESP-32_DIS_MQTT
-A display based on   ESP32-2432S024x  boards controlled by MQTT and is single core using
+A display based on   ESP32-2432S024x  boards controlled by MQTT and is single core using. OLDER and SLOWER version as SW spi based.
 
 You can choose between all three types of screens none, capacitive or resistive. -> x= N / C or R
 This variant is only using single core.
