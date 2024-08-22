@@ -222,6 +222,9 @@ WiFiClient   espClient;     // Get Wifi access
 PubSubClient mqttclient;    // MQTT protokol handler
 
 // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  APPLICATION SPECIFIC start AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  Nontouch based routines  XXXXXXXXXXXXXXXXXXXXXXXXXXXXX   
+
 #define touch_3_2_0
 
 void MakeScreenTable(){
