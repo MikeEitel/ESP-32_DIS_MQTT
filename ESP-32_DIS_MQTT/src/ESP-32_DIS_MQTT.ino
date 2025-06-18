@@ -579,7 +579,7 @@ void  StaticText2Screen(int Sta, int Stb) {   // MQTT M
 // mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm mqtt connection  start mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
 void setup_wifi() {
   delay(10);
-
+  WiFi.hostname(iamclient);
   WiFi.config(staticIP, gateway, subnet);
 
   Serial.println("");
