@@ -7,37 +7,36 @@
 */
 
 // Wifi acess definitions of network to connect to  
-#define wifi_ssid "xxx"               // REPLACE !!!!
-#define wifi_password "yyy"           // REPLACE !!!!
+#define wifi_ssid "xxx"
+#define wifi_password "yyy"
 
-#define myIP "100"                               // Device ID
+#define myIP "100"                                            // Device ID
 
 // Wifi definitions of this device  
-//IPAddress staticIP(192,168,x,atoi(myIP));      // IOT device IP
-IPAddress staticIP(1,1,1,atoi(myIP)); // REPLACE !!!!
-IPAddress subnet(255,255,255,0);                 // Network subnet size
-//IPAddress gateway(192,168,x,y);                // Network router IP
-IPAddress gateway(1,1,1,1);           // REPLACE !!!!
+//IPAddress staticIP(192,168,x,atoi(myIP));                      // IOT device IP
+IPAddress staticIP(1,1,1,atoi(myIP));       // REPLACE !!!!
+IPAddress subnet(255,255,255,0);                               // Network subnet size
+//IPAddress gateway(192,168,x,y);                                // Network router IP
+IPAddress gateway(1,1,1,1);                // REPLACE !!!!
 
-// Raspberri Pi Mosquitto MQTT Broker definitions
-#define mqtt_server    "192.168.x.z"  // REPLACE !!!!           // IOT MQTT server IP
+// Mosquitto MQTT Broker definitions
+#define mqtt_server    "192.168.x.z"                           // IOT MQTT server IP
 #define mqtt_user      "admin"
 #define mqtt_password  "admin"
 #define mqtt_port      1883
-#define WiFi_timeout    101                       // How many times to try before give up
-#define mqtt_timeout     11                       // How many times to try before try Wifi reconnect
+#define WiFi_timeout    100                                    // How many times to try before give up
+#define mqtt_timeout     10                                    // How many times to try before try Wifi reconnect
 
 
 // MQTT Topics
 #define mytype         "esp/32S-DIS-"             // Client Typ
 #define iamclient      mytype myIP                // Client name 
-#define in_topic       iamclient "/command"       // This common input is received from MQTT
-#define out_param      iamclient "/signal"        // Wifi signal strength is send to MQTT
-#define out_ligth      iamclient "/light"         // Light sensor is send to MQTT
-#define out_error      iamclient "/status"        // This is a general message send to MQTT
-#define out_topic      iamclient "/loop"          // This helper variable is send to MQTT
-#define out_watchdog   iamclient "/watchdog"      // A watchdog bit send to MQTT
-#define out_button     iamclient "/button"        // The touched area nr. is send to MQTT
+#define in_topic       iamclient "/command"       // This is received from MQTT
+#define out_param      iamclient "/sensors"       // This is send to MQTT
+#define out_error      iamclient "/status"        // This is send to MQTT
+#define out_topic      iamclient "/loop"          // This is send to MQTT
+#define out_watchdog   iamclient "/watchdog"      // This is send to MQTT
+#define out_button     iamclient "/button"        // This is send to MQTT
 
 // error =  -1    Wrong command received
 // error =   0    Normal status
@@ -49,5 +48,5 @@ IPAddress gateway(1,1,1,1);           // REPLACE !!!!
 #if defined(TEST)
   const long interval =  1000;                    // Interval at which to publish sensor readings
 #else
-  const long interval = 3000; // 5000;                   // Interval at which to publish sensor readings
+  const long interval = 1000; // 5000;                   // Interval at which to publish sensor readings
 #endif
